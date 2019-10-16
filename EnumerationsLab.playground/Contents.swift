@@ -54,18 +54,27 @@ default: fatalError("Was expecting an iPhone but got \(myPhone)")
 
 
 enum Step {
-    case up
-    case down
-    case left
-    case right
+    case up(Int)
+    case down(Int)
+    case left(Int)
+    case right(Int)
 }
 
 // Your function here
 
-func getPosition(startingAt x: [Int], afterSteps y: [Int]) -> (Int, Int) {
-    
-}
+let startingLocation = (x: 0, y: 0)
+//let steps: [Step] = [.up, .up, .left, .down, .left]
 
+func getPosition(startingAt x: [Int], afterSteps y: (Int, Int)) -> (Int, Int) {
+    var xCounter = 0
+    var yCounter = 0
+    for step in Step {
+        switch true{
+        case .up:
+            yCounter += 1
+        
+    }
+    }
 
 
 // Uncomment the lines below to test your solution
