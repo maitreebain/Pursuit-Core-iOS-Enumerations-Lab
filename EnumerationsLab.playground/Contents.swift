@@ -65,18 +65,24 @@ enum Step {
 let startingLocation = (x: 0, y: 0)
 //let steps: [Step] = [.up, .up, .left, .down, .left]
 
-func getPosition(startingAt x: [Int], afterSteps y: (Int, Int)) -> (Int, Int) {
-    var xCounter = 0
-    var yCounter = 0
-    for step in Step {
-        switch true{
-        case .up:
-            yCounter += 1
-        
-    }
-    }
-
-
+//ATTEMPT:
+//func getPosition(startingAt x: [Int], afterSteps y: (Int, Int)) -> (Int, Int) {
+//    var xCounter = 0
+//    var yCounter = 0
+//    for step in Step {
+//        switch self{
+//        case Step.up:
+//            yCounter += 1
+//        case Step.down:
+//            yCounter -= 1
+//        case Step.left:
+//            xCounter -= 1
+//        case Step.right:
+//            xCounter += 1
+//
+//    }
+//    }
+//}
 // Uncomment the lines below to test your solution
 
 //let startingLocation = (x: 0, y: 0)
@@ -98,6 +104,24 @@ enum Coin: Int {
 }
 
 // Your function here
+
+func getTotalValue (from: [(Int ,Coin)]) -> Double {
+    var totalNumberOfCents = 0
+    for tuple in from{
+        switch tuple.1 {
+        case .penny:
+            totalNumberOfCents += Coin.penny.rawValue * tuple.0
+        case .nickle:
+            totalNumberOfCents += Coin.nickle.rawValue * tuple.0
+        case .dime:
+            totalNumberOfCents += Coin.dime.rawValue * tuple.0
+        case .quarter:
+            totalNumberOfCents += Coin.quarter.rawValue * tuple.0
+        }
+    }
+    return Double(totalNumberOfCents)
+}
+
 
 // Uncomment the lines below to test your solution
 
@@ -121,6 +145,58 @@ enum Coin: Int {
 
 // Your code here
 
+enum Day: String {
+    case monday = "Monday"
+    case tuesday = "Tuesday"
+    case wednesday = "Wednesday"
+    case thursday = "Thursday"
+    case friday = "Friday"
+    case saturday = "Saturday"
+    case sunday = "Sunday"
+    
+    func isWeekday () {
+        switch self{
+        case .monday:
+            print("Moday is a weekday")
+        case .tuesday:
+            print("Tuesday is a weekday")
+        case .wednesday:
+            print("Wednesday is a weekday")
+        case .thursday:
+            print("Thursday is a weekday")
+        case .friday:
+            print("Friday is a weekday")
+        case .saturday:
+            print("Saturday is not a weekday")
+        case .sunday:
+            print("Sunday is not a weekday")
+        }
+    }
+}
+
+let weekDay = Day(rawValue: "Monday") ?? Day(rawValue: "not a day")
+
+if let weekDay = Day(rawValue: "Monday"){
+    switch weekDay {
+    case .monday:
+        print(Day.isWeekday(.monday))
+    case .tuesday:
+        print(Day.isWeekday(.tuesday))
+    case .wednesday:
+        print(Day.isWeekday(.wednesday))
+    case .thursday:
+        print(Day.isWeekday(.thursday))
+    case .friday:
+        print(Day.isWeekday(.friday))
+    case .saturday:
+        print(Day.isWeekday(.saturday))
+    case .sunday:
+        print(Day.isWeekday(.sunday))
+        
+    }
+    
+}
+
 // Uncomment the lines below to test your solution
 
 //assert(Day.monday.isWeekday() == true, "Monday is a weekday")
@@ -141,6 +217,33 @@ enum Coin: Int {
 
 // Your code here
 
+//ATTEMPTED ?
+enum Handshape: Double {
+    case rock = 3
+    case paper = 2
+    case scissors = 1
+
+enum MatchResult{
+    case win
+    case draw
+    case lose
+
+//func matchResult(fromPlayerOneShape: (Handshape, Handshape)) -> MatchResult {
+//
+//    switch self {
+//    case .win:
+//    }
+//
+//}
+//    return MatchResult
+//
+//
+//}
+//}
+//    }
+    }
+    
+}
 // Uncomment the lines below to test your solution
 
 //let testCases: [(HandShape, HandShape, MatchResult)] = [
