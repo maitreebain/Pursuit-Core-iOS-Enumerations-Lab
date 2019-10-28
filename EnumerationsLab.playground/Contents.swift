@@ -219,31 +219,37 @@ if let weekDay = Day(rawValue: "Monday"){
 
 //ATTEMPTED ?
 enum Handshape: Double {
-    case rock = 3
-    case paper = 2
+    case rock = 2
+    case paper = 3
     case scissors = 1
+}
 
 enum MatchResult{
     case win
     case draw
     case lose
-
-//func matchResult(fromPlayerOneShape: (Handshape, Handshape)) -> MatchResult {
-//
-//    switch self {
-//    case .win:
-//    }
-//
-//}
-//    return MatchResult
-//
-//
-//}
-//}
-//    }
-    }
-    
 }
+
+func matchResult(fromPlayerOneShape: Handshape, fromPlayerTwoShape: Handshape) -> MatchResult {
+
+    switch MatchResult.self {
+    case fromPlayerOneShape == .rock && fromPlayerTwoShape == .paper:
+        print("\(fromPlayerOneShape) wins!")
+        case fromPlayerOneShape == .rock && fromPlayerTwoShape == .scissors:
+        print("\(fromPlayerTwoShape) wins!")
+        case fromPlayerOneShape == .paper && fromPlayerTwoShape == .scissors:
+        print("\(fromPlayerTwoShape) wins!")
+        case fromPlayerOneShape == .scissors && fromPlayerTwoShape == .paper:
+        print("\(fromPlayerOneShape) wins!")
+        case fromPlayerOneShape == .scissors && fromPlayerTwoShape == .paper:
+        print("\(fromPlayerTwoShape) wins!")
+    }
+
+    return MatchResult
+}
+
+
+
 // Uncomment the lines below to test your solution
 
 //let testCases: [(HandShape, HandShape, MatchResult)] = [
