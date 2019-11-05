@@ -105,7 +105,7 @@ enum Coin: Int {
 
 // Your function here
 
-func getTotalValue (from: [(Int ,Coin)]) -> Double {
+func getTotalValue (from: [(Int ,Coin)]) -> Int {
     var totalNumberOfCents = 0
     for tuple in from{
         switch tuple.1 {
@@ -119,24 +119,24 @@ func getTotalValue (from: [(Int ,Coin)]) -> Double {
             totalNumberOfCents += Coin.quarter.rawValue * tuple.0
         }
     }
-    return Double(totalNumberOfCents)
+    return totalNumberOfCents
 }
 
 
 // Uncomment the lines below to test your solution
 
-//let coinArr: [(Int, Coin)] = [
-//    (10, .penny),
-//    (15, .nickle),
-//    (3, .quarter),
-//    (20, .penny),
-//    (3, .dime),
-//    (7, .quarter)
-//]
-//
-//let expectedTotal = 385
-//let total = getTotalValue(from: coinArr)
-//assert(total == expectedTotal, "Was expecting \(expectedTotal), but got \(total)")
+let coinArr: [(Int, Coin)] = [
+    (10, .penny),
+    (15, .nickle),
+    (3, .quarter),
+    (20, .penny),
+    (3, .dime),
+    (7, .quarter)
+]
+
+let expectedTotal = 385
+let total = getTotalValue(from: coinArr)
+assert(total == expectedTotal, "Was expecting \(expectedTotal), but got \(total)")
 
 // Question Four
 
@@ -230,23 +230,23 @@ enum MatchResult{
     case lose
 }
 
-func matchResult(fromPlayerOneShape: Handshape, fromPlayerTwoShape: Handshape) -> MatchResult {
-
-    switch MatchResult.self {
-    case fromPlayerOneShape == .rock && fromPlayerTwoShape == .paper:
-        print("\(fromPlayerOneShape) wins!")
-        case fromPlayerOneShape == .rock && fromPlayerTwoShape == .scissors:
-        print("\(fromPlayerTwoShape) wins!")
-        case fromPlayerOneShape == .paper && fromPlayerTwoShape == .scissors:
-        print("\(fromPlayerTwoShape) wins!")
-        case fromPlayerOneShape == .scissors && fromPlayerTwoShape == .paper:
-        print("\(fromPlayerOneShape) wins!")
-        case fromPlayerOneShape == .scissors && fromPlayerTwoShape == .paper:
-        print("\(fromPlayerTwoShape) wins!")
-    }
-
-    return MatchResult
-}
+//func matchResult(fromPlayerOneShape: Handshape, fromPlayerTwoShape: Handshape) -> MatchResult {
+//
+//    switch MatchResult.self {
+//    case fromPlayerOneShape == .rock && fromPlayerTwoShape == .paper:
+//        print("\(fromPlayerOneShape) wins!")
+//        case fromPlayerOneShape == .rock && fromPlayerTwoShape == .scissors:
+//        print("\(fromPlayerTwoShape) wins!")
+//        case fromPlayerOneShape == .paper && fromPlayerTwoShape == .scissors:
+//        print("\(fromPlayerTwoShape) wins!")
+//        case fromPlayerOneShape == .scissors && fromPlayerTwoShape == .paper:
+//        print("\(fromPlayerOneShape) wins!")
+//        case fromPlayerOneShape == .scissors && fromPlayerTwoShape == .paper:
+//        print("\(fromPlayerTwoShape) wins!")
+//    }
+//
+//    return MatchResult
+//}
 
 
 
